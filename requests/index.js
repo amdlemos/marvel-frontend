@@ -1,7 +1,7 @@
 import useSWR from "swr"
 
 // work
-const baseUrl = "http://192.168.1.4:8080"
+const baseUrl = "https://us-central1-marvel-quantzed.cloudfunctions.net"
 
 const fetcher = (url) => fetch(url).then(res => res.json())
 
@@ -25,7 +25,7 @@ export const useGet = (path, params) => {
     throw new Error("Path is required")
   }  
   
-  const url = new URL(path, baseUrl)
+  const url = new URL("/hello_http"+path, baseUrl)
   
   url.search = getParams(params)  
   console.log('url', url)
