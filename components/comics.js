@@ -11,7 +11,7 @@ export default function Comics({ pageIndex }) {
         <div className="container">
             <div className="container mx-auto px-4 py-2">
                 <h1 className="text-3xl font-bo</span>ld underline">
-                    Characters
+                    Comics
                 </h1>
             </div>
             <div className="container m-auto">
