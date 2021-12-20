@@ -1,7 +1,7 @@
-import { useGetCharacters } from "../requests"
+import { useGet } from "../requests"
 
 export default function Characters({ indexPage, nameStartsWith }) {    
-    const { data, error } = useGetCharacters(`/characters/`, { indexPage, nameStartsWith })
+    const { data, error } = useGet(`/characters/`, { indexPage, nameStartsWith })
     
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>
