@@ -1,9 +1,15 @@
+import { useState } from "react"
 import { useGet } from "../requests"
 
 export default function Characters({ pageIndex, nameStartsWith }) {    
     const offset = pageIndex >= 0 ? pageIndex*20 : 0
+    const [searchInput, setSearchInput] = useState('')    
     const { data, error } = useGet(`/characters/`, { offset, nameStartsWith })
     
+    const searchItems = () => {
+        
+    }
+
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>    
     return (
@@ -12,6 +18,10 @@ export default function Characters({ pageIndex, nameStartsWith }) {
                 <h1 className="text-3xl font-bo</span>ld underline">
                     Characters
                 </h1>
+                <input icon='search'
+                placeholder='Search...'
+                onChange={() => searchItems()}
+            />
             </div>
             <div className="container m-auto">
                 {
