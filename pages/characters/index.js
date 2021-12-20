@@ -10,11 +10,6 @@ export default function IndexPage() {
   const [pageIndex, setPageIndex] = useState(0)
   const [nameStartsWith, setNameStartsWith] = useState("")
 
-
-  const changeHandler = e => {
-    alert(nameStartsWith)
-    
-  }
   return (
     <div>
       <form onSubmit={searchCharacters}>        
