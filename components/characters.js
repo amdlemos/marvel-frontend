@@ -6,7 +6,7 @@ export default function Characters({ pageIndex, nameStartsWith }) {
     const { data, error } = useGet(`/characters/`, { offset, nameStartsWith })
 
     if (error) return <h1>Something went wrong!</h1>
-    if (!data) return <h1>Loading...</h1>
+    if (!data) return <h1>Loading...</h1>    
     return (
         <div className="container">
             <div className="container mx-auto px-4 py-2">
