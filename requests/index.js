@@ -1,6 +1,7 @@
 import useSWR from "swr"
 
-const baseUrl = "http://192.168.1.4:8080"
+console.log('env',process.env.base_url)
+const baseUrl = process.env.base_url// "http://192.168.1.4:808"
 const fetcher = (url) => fetch(url).then(res => res.json())
 const getParams = (params) => {
   
