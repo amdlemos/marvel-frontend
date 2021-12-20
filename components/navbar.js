@@ -9,14 +9,24 @@ export default function NavBar() {
         <div className="relative flex items-center justify-between h-20">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" alt="Home" className="text-white">Marvel API
+              <Link href="/" alt="Home" className="text-white">
+                <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Marvel API
+                </div>
               </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Link href="/characters" aria-current="page" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Characters</Link>
-
-                <Link href="/comics" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Comics                </Link>
+                <Link href="/characters">
+                  <div aria-current="page" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Characters
+                  </div>
+                </Link>
+                <Link href="/comics">
+                  <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Comics
+                  </div>
+                </Link>
 
               </div>
             </div>
@@ -31,7 +41,7 @@ export default function NavBar() {
           <Link href="/characters" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium" aria-current="page">Characters
           </Link>
 
-          <Link href="/comics"  className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Comics
+          <Link href="/comics" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Comics
           </Link>
         </div>
       </div>
