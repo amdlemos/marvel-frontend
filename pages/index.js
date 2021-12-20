@@ -9,7 +9,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="/">Marvel API!</a>
+          Welcome to <Link href="/">Marvel API!</Link>
         </h1>     
       </main>
 
