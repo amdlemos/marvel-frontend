@@ -3,8 +3,8 @@ import { useGet } from "../requests"
 
 export default function Comics({ pageIndex, titleStartsWith }) {
     const offset = pageIndex >= 0 ? pageIndex*20 : 0
-    // const noVariants = true
-    const { data, error } = useGet(`/comics`, { offset, titleStartsWith, noVariants })
+    
+    const { data, error } = useGet(`/comics`, { offset, titleStartsWith })
 
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>    

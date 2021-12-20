@@ -3,9 +3,12 @@ import useSWR from "swr"
 const baseUrl = "http://192.168.1.4:8080"
 const fetcher = (url) => fetch(url).then(res => res.json())
 const getParams = (params) => {
+  
+  if(!params) return ""
   const values = Object.values(params);
   let search = new URLSearchParams()
 
+ 
   for (const prop in params) {      
     if (params[prop])
     {      
