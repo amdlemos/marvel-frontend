@@ -1,8 +1,9 @@
 
 import { useGet } from "../requests"
 
-export default function Characters({ indexPage, nameStartsWith }) {
-    const { data, error } = useGet(`/comics`, { indexPage, nameStartsWith })
+export default function Comics({ indexPage }) {
+    const offset = indexPage*20
+    const { data, error } = useGet(`/comics`, { offset })
 
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>

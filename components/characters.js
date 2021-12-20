@@ -1,7 +1,7 @@
 import { useGet } from "../requests"
 
-export default function Characters({ indexPage, nameStartsWith }) {    
-    const { data, error } = useGet(`/characters/`, { indexPage, nameStartsWith })
+export default function Characters({ offset, nameStartsWith }) {    
+    const { data, error } = useGet(`/characters/`, { offset, nameStartsWith })
     
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>
@@ -30,8 +30,6 @@ export default function Characters({ indexPage, nameStartsWith }) {
                                             <p className="mt-2">{character.id}</p>
                                         </div>
                                     </div>
-
-
                                 </div>
                             )
                         }) 
