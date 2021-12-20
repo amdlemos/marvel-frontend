@@ -2,12 +2,11 @@
 import { useGet } from "../requests"
 
 export default function Comics({ pageIndex }) {
-    const offset = pageIndex*20
+    const offset = pageIndex >= 0 ? pageIndex*20 : 0
     const { data, error } = useGet(`/comics`, { offset })
 
     if (error) return <h1>Something went wrong!</h1>
-    if (!data) return <h1>Loading...</h1>
-    console.log(data)
+    if (!data) return <h1>Loading...</h1>    
     return (
         <div className="container">
             <div className="container mx-auto px-4 py-2">

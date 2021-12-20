@@ -3,7 +3,7 @@ import Characters from '../../components/characters'
 
 export default function IndexPage() {
   const [pageIndex, setPageIndex ] = useState(0)
-  const [nameStartsWith, setNameStartsWith] = useState("Sp")  
+  const [nameStartsWith, setNameStartsWith] = useState("")  
 
   return (
     <div>
