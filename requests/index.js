@@ -1,8 +1,7 @@
 import useSWR from "swr"
 
-
-const fetcher = (url) => fetch(url).then(res => res.json())
 const baseUrl = "http://192.168.1.4:8080"
+const fetcher = (url) => fetch(url).then(res => res.json())
 const getParams = (params) => {
   const values = Object.values(params);
   let search = new URLSearchParams()
@@ -16,6 +15,7 @@ const getParams = (params) => {
   
   return  search
 }
+
 export const useGet = (path, params) => {
   if (!path) {
     throw new Error("Path is required")
