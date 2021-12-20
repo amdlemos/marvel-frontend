@@ -31,7 +31,7 @@ export default function NavBar() {
           <Link href="/characters" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium" aria-current="page">Characters
           </Link>
 
-          <Link href="/comics" href="#" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Comics
+          <Link href="/comics"  className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Comics
           </Link>
         </div>
       </div>
