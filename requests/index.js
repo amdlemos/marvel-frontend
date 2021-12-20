@@ -1,7 +1,7 @@
 import useSWR from "swr"
 
 console.log('env',process.env.base_url)
-const baseUrl = process.env.base_url ? process.env.base_url : 'https://us-central1-marvel-quantzed.cloudfunctions.net/hello_http'
+const baseUrl = process.env.base_url
 const fetcher = (url) => fetch(url).then(res => res.json())
 const getParams = (params) => {
   

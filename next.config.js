@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    base_url: 'http://192.168.1.4:8080',
+    base_url: 'https://us-central1-marvel-quantzed.cloudfunctions.net/hello_http',
   },
   reactStrictMode: false,
 }
