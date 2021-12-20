@@ -6,8 +6,8 @@ export default function IndexPage() {
 
   return (
     <div>
-    <Comics indexPage={pageIndex} />
-    <div style={{ display: 'none' }}><Comics indexPage={pageIndex + 1}/></div>
+    <Comics pageIndex={pageIndex} />
+    <div style={{ display: 'none' }}><Comics pageIndex={pageIndex + 1}/></div>
     <button onClick={() => setPageIndex(pageIndex - 1)}>Previous</button>
     <button onClick={() => setPageIndex(pageIndex + 1)}>Next</button>
     </div>

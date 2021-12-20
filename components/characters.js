@@ -1,6 +1,7 @@
 import { useGet } from "../requests"
 
-export default function Characters({ offset, nameStartsWith }) {    
+export default function Characters({ pageIndex, nameStartsWith }) {    
+    const offset = pageIndex*20
     const { data, error } = useGet(`/characters/`, { offset, nameStartsWith })
     
     if (error) return <h1>Something went wrong!</h1>

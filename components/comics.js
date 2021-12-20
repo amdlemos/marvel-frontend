@@ -1,8 +1,8 @@
 
 import { useGet } from "../requests"
 
-export default function Comics({ indexPage }) {
-    const offset = indexPage*20
+export default function Comics({ pageIndex }) {
+    const offset = pageIndex*20
     const { data, error } = useGet(`/comics`, { offset })
 
     if (error) return <h1>Something went wrong!</h1>
