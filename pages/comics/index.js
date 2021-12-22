@@ -19,8 +19,8 @@ export default function IndexPage() {
           <button className="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-white bg-indigo-600 rounded-r-lg hover:bg-indigo-500 focus:bg-indigo-700" type="submit">Search</button>
         </div>
       </form>
-      <Comics pageIndex={pageIndex} titleStartsWith={titleStartsWith} />
-      <div style={{ display: 'none' }}><Comics pageIndex={pageIndex + 1} titleStartsWith={titleStartsWith} /></div>
+      <Comics pageIndex={pageIndex} titleStartsWith={titleStartsWith} orderBy='-modified' noVariants={false} />
+      <div style={{ display: 'none' }}><Comics pageIndex={pageIndex + 1} titleStartsWith={titleStartsWith} orderBy='-modified' noVariants={false} /></div>
       <NavPagination pageIndex={pageIndex} onclick={onclick} />
     </div>
   )

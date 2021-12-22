@@ -10,7 +10,7 @@ export default function Characters({ pageIndex, nameStartsWith }) {
     return (
         <div className="container">
             <div className="container mx-auto px-4 py-2">
-                <h1 className="text-3xl underline">
+                <h1 className="text-3xl">
                     Characters
                 </h1>
             </div>

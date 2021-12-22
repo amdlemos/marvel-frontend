@@ -9,6 +9,7 @@ export default function Character() {
     if (!data) return <h1>Loading...</h1>    
 
     const character = data.data.results[0]
+    console.log(character)
     return (
         <div className="container">
             <div className="container mx-auto px-4 py-2">
