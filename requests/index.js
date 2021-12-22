@@ -28,7 +28,7 @@ export const useGet = (path, params) => {
   const url = new URL("/hello_http"+path, baseUrl)
   
   url.search = getParams(params)  
-  console.log('url', url)
+  
   return useSWR(url.toString(), fetcher)  
 }
 

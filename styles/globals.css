@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* max-w-[150px] m-auto px-4 py-4 my-3.5 overflow-hidden rounded-xl shadow-md bg-yellow-50 */
+
+
+@layer components {
+    .card {
+        @apply m-2.5;
+        @apply max-w-[150px];
+        @apply px-2;
+        @apply py-4;
+        @apply bg-yellow-300;
+        @apply rounded-xl;
+        @apply overflow-hidden;
+        @apply my-3.5;
+    }
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Characters from '../../components/characters'
+import NavPagination from '../../components/nav-pagination'
 
 export default function IndexPage() {
   const searchCharacters = event => {
@@ -8,6 +9,7 @@ export default function IndexPage() {
   }
   const [pageIndex, setPageIndex] = useState(0)
   const [nameStartsWith, setNameStartsWith] = useState("")
+  const onclick = (action) => setPageIndex(pageIndex + action)
 
   return (
     <div>
@@ -19,14 +21,7 @@ export default function IndexPage() {
       </form>
       <Characters pageIndex={pageIndex} nameStartsWith={nameStartsWith} />
       <div style={{ display: 'none' }}><Characters pageIndex={pageIndex + 1} nameStartsWith={nameStartsWith} /></div>
-      <div className='container'>
-        <nav aria-label="Page navigation">
-          <ul className="inline-flex">
-            <li><button onClick={() => setPageIndex(pageIndex - 1)} className="h-10 px-5 text-indigo-600 transition-colors duration-150 bg-white rounded-l-lg focus:shadow-outline hover:bg-indigo-100">Prev</button></li>
-            <li><button onClick={() => setPageIndex(pageIndex + 1)} className="h-10 px-5 text-indigo-600 transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100">Next</button></li>
-          </ul>
-        </nav>
-      </div>
+      <NavPagination pageIndex={pageIndex} onclick={onclick} />
     </div>
   )
 }
