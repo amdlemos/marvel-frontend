@@ -1,9 +1,14 @@
+import React, { useState } from 'react'
 import { Router, useRouter } from 'next/router'
 import { useGet } from "../../requests"
 import SeriesByChracter from '../../components/series-by-character'
+import Thumbnail from '../../components/thumbnail'
+import NavPagination from '../../components/nav-pagination'
 
 export default function Character() {
     const { id } = useRouter().query
+    const [pageIndex, setPageIndex] = useState(0)
+    const onclick = (action) => setPageIndex(pageIndex + action)
     const { data, error } = useGet(`/characters/` + id)
 
     if (error) return <h1>Something went wrong!</h1>
@@ -14,7 +19,7 @@ export default function Character() {
     return (
         <div className="flex flex-wrap justify-center">
             <div className='p-10'>
-                <img className="max-w-sm rounded border-4 border-solid border-black" src={character.thumbnail.path + "/portrait_uncanny." + character.thumbnail.extension} alt='avatar'></img>
+                <Thumbnail thumbnail={character.thumbnail} width='portrait_uncanny' />
             </div>
             <div className='p-10 pl-0 sm:pl-10'>
                 {character.name}
@@ -23,63 +28,11 @@ export default function Character() {
 
             </div>
             <div>
-                {/* <h6>Comics</h6>
-                <div className="container m-auto">
-                    {
-                        character.comics.items.map((c) => {
-                            return (
-                                <>
-                                    {c.name}
-                                    {c.resourceURI}
-                                </>
-                            )
-                        })
-                    }
-                </div> */}
 
-                {/* <h6>Events</h6>
-                <div className="container m-auto">
-                    {
-                        character.events.items.map((c) => {
-                            return (
-                                <>
-                                    {c.name}
-                                    {c.resourceURI}
-                                </>
-                            )
-                        })
-                    }
-                </div> */}
-                <SeriesByChracter characterId={character.id} />
-                    
-                
-                {/* <h6>Series</h6>
-                <div className="container m-auto">
-                    {
-                        character.series.items.map((c) => {
-                            return (
-                                <>
-                                    {c.name}
-                                    {c.resourceURI}
-                                </>
-                            )
-                        })
-                    }
-                </div> */}
+                <SeriesByChracter characterId={character.id} pageIndex={pageIndex} />
+                <div style={{ display: 'none' }}><SeriesByChracter characterId={character.id} pageIndex={pageIndex + 1} /></div>
+                <NavPagination pageIndex={pageIndex} onclick={onclick} />
 
-                {/* <h6>Stories</h6>
-                <div className="container m-auto">
-                    {
-                        character.stories.items.map((c) => {
-                            return (
-                                <>
-                                    {c.name}
-                                    {c.resourceURI}
-                                </>
-                            )
-                        })
-                    }
-                </div> */}
             </div>
         </div>
     )

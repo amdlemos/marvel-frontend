@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 import { useGet } from "../../requests"
 
 export default function Comic() {
-    const { id } = useRouter().query
+    const router = useRouter()
+    const { id } = router.query
     const { data, error } = useGet(`/comics/` + id)
 
     if (error) return <h1>Something went wrong!</h1>
@@ -40,6 +41,9 @@ export default function Comic() {
                     </div>
                 </div>
             </div>
+            <button type="button" onClick={() => router.back()}>
+      Click here to go back
+    </button>
 
         </div>
     )
