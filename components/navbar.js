@@ -54,6 +54,9 @@ export default function NavBar() {
           <Link href="/comics" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">
             <span className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Comics</span>
           </Link>
+          <Link href="/series" className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">
+            <span className="text-gray-300 px-3 py-2 rounded-md hover:bg-gray-700 hover:text-white block  text-base font-medium">Series</span>
+          </Link>
           </li>
           </ul>
         </nav>

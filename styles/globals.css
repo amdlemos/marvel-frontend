@@ -13,5 +13,6 @@
         @apply rounded-xl;
         @apply overflow-hidden;
         @apply my-3.5;
+        @apply hover:cursor-pointer;
     }
 }

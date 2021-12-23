@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useGet } from "../../requests"
+import CharacteresByComic from '../../components/characters-by-comic'
+import Thumbnail from '../../components/thumbnail'
 
 export default function Comic() {
     const router = useRouter()
+    const [pageIndex, setPageIndex] = useState(0)
+    const onclick = (action) => setPageIndex(pageIndex + action)
     const { id } = router.query
     const { data, error } = useGet(`/comics/` + id)
 
@@ -15,7 +19,7 @@ export default function Comic() {
     return (
         <div className='flex flex-wrap justify-center'>
             <div className='p-10'>
-                <img className="max-w-sm" src={comic.thumbnail.path + "/portrait_uncanny." + comic.thumbnail.extension} alt='avatar'></img>
+                <Thumbnail thumbnail={comic.thumbnail} width='portrait_uncanny' />                
             </div>
             <div className='p-10 pl-0 sm:pl-10'>
                 <div className='uppercase font-bold text-2xl'>
@@ -40,6 +44,7 @@ export default function Comic() {
                         <span>{comic.dates[0].date}</span>
                     </div>
                 </div>
+                <CharacteresByComic comicId={comic.id} pageIndex={pageIndex}  />
             </div>
             <button type="button" onClick={() => router.back()}>
       Click here to go back
