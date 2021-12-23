@@ -12,7 +12,7 @@ export default function Comic() {
     const comic = data.data.results[0]
     console.log(comic)
     return (
-        <div className='flex'>
+        <div className='flex flex-wrap'>
             <div className='p-10'>
                 <img className="max-w-sm" src={comic.thumbnail.path + "/portrait_uncanny." + comic.thumbnail.extension} alt='avatar'></img>
             </div>

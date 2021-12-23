@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-/* max-w-[150px] m-auto px-4 py-4 my-3.5 overflow-hidden rounded-xl shadow-md bg-yellow-50 */
-
-
 @layer components {
     .card {
         @apply m-2.5;

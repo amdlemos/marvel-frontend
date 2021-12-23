@@ -4,11 +4,11 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className=''>
      
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main className=''>
+        <h1 className=''>
           Welcome to <Link href="/">Marvel API!</Link>
         </h1>     
       </main>
