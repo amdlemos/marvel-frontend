@@ -14,7 +14,7 @@ export default function Series({ pageIndex }) {
             {
                 data.data.results.map((series) => {
                     return (
-                        <Thumbnail thumbnail={series.thumbnail} width="portrait_xlarge" />
+                        <Thumbnail key={series.id} thumbnail={series.thumbnail} width="portrait_xlarge" />
                     )
                 })
             }
