@@ -12,15 +12,15 @@ export default function Comic() {
     const comic = data.data.results[0]
     console.log(comic)
     return (
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap justify-center'>
             <div className='p-10'>
                 <img className="max-w-sm" src={comic.thumbnail.path + "/portrait_uncanny." + comic.thumbnail.extension} alt='avatar'></img>
             </div>
-            <div className='p-10 pl-0'>
+            <div className='p-10 pl-0 sm:pl-10'>
                 <div className='uppercase font-bold text-2xl'>
                     {comic.title}
                 </div>
-                <div className='my-2 indent-6 text-justify'>
+                <div className='my-2 indent-6 text-justify '>
                     {comic.description}
                 </div>
                 <div className='flex'>
