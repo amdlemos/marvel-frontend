@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useGet } from "../../requests"
-import CharacteresByComic from '../../components/characters-by-comic'
+import CharacteresBy from '../../components/characters-by'
 import Thumbnail from '../../components/thumbnail'
+import StoriesBy from '../../components/stories-by'
 
 export default function Comic() {
     const router = useRouter()
@@ -44,7 +45,8 @@ export default function Comic() {
                         <span>{comic.dates[0].date}</span>
                     </div>
                 </div>
-                <CharacteresByComic comicId={comic.id} pageIndex={pageIndex}  />
+                <CharacteresBy path="/comics" id={comic.id} pageIndex={pageIndex}  />
+                {/* <StoriesBy path="/comics" id={comic.id} pageIndex={pageIndex} /> */}
             </div>
             <button type="button" onClick={() => router.back()}>
       Click here to go back

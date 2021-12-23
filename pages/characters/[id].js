@@ -4,6 +4,7 @@ import { useGet } from "../../requests"
 import SeriesByChracter from '../../components/series-by-character'
 import Thumbnail from '../../components/thumbnail'
 import NavPagination from '../../components/nav-pagination'
+import ComicsBy from '../../components/comics-by'
 
 export default function Character() {
     const { id } = useRouter().query
@@ -28,11 +29,10 @@ export default function Character() {
 
             </div>
             <div>
-
                 <SeriesByChracter characterId={character.id} pageIndex={pageIndex} />
+                <ComicsBy path="/characters" id={character.id} pageIndex={pageIndex} />
                 <div style={{ display: 'none' }}><SeriesByChracter characterId={character.id} pageIndex={pageIndex + 1} /></div>
                 <NavPagination pageIndex={pageIndex} onclick={onclick} />
-
             </div>
         </div>
     )

@@ -2,27 +2,27 @@ import Link from 'next/link'
 import { useGet } from '../requests'
 import Thumbnail from './thumbnail'
 
-export default function ComicsBySerie({ serieId, pageIndex }) {
-    console.log(serieId)
+export default function CharacteresBy({ path, id, pageIndex }) {
+    
     const offset = pageIndex >= 0 ? pageIndex * 3 : 0
     const limit = 3
-    const { data, error } = useGet(`/series/${serieId}/comics`, { offset, limit })
+    const { data, error } = useGet(`${path}/${id}/characters`, { offset, limit })
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>
-    console.log('comics_by_serie', data)
+    console.log('character_by',data)
     return (
         <div className='container'>
             <div className='flex flex-wrap justify-center'>
                 <div className='min-w-min absolute text-left'>
-                    Comics
+                    Characters
                 </div>
                 {
-                    data.data.results.map((comic) => {
+                    data.data.results.map((character) => {
                         return (
-                            <Link key={comic.id} href={"/comics/" + comic.id}>
-                                <div key={comic.id} className='p-6 max-w-[200px]'>
-                                    <div className='truncate'>{comic.title}</div>
-                                    <Thumbnail thumbnail={comic.thumbnail} width='standard_large' />
+                            <Link key={character.id} href={"/characters/" + character.id}>
+                                <div key={character.id} className='p-6 max-w-[200px]'>
+                                    <div className='truncate'>{character.title}</div>
+                                    <Thumbnail thumbnail={character.thumbnail} width='standard_large' />
                                 </div>
                             </Link>
                         )

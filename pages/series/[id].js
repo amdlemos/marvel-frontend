@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Router, useRouter } from 'next/router'
 import { useGet } from "../../requests"
-import ComicsBySerie from '../../components/comics_by_serie'
+import ComicsBy from '../../components/comics-by'
 import Thumbnail from '../../components/thumbnail'
 import NavPagination from '../../components/nav-pagination'
+import CharacteresBy from '../../components/characters-by'
 
 export default function Serie() {
     const { id } = useRouter().query
@@ -28,11 +29,10 @@ export default function Serie() {
 
             </div>
             <div>
-
-                <ComicsBySerie serieId={serie.id} pageIndex={pageIndex} />
-                <div style={{ display: 'none' }}><ComicsBySerie serieId={serie.id} pageIndex={pageIndex + 1} /></div>
+                <ComicsBy path='/series' id={serie.id} pageIndex={pageIndex} />
+                <CharacteresBy path='/series' id={serie.id} pageIndex={pageIndex} />
+                <div style={{ display: 'none' }}><ComicsBy path='/series' id={serie.id} pageIndex={pageIndex + 1} /></div>
                 <NavPagination pageIndex={pageIndex} onclick={onclick} />
-
             </div>
         </div>
     )
