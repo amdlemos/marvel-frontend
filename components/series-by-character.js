@@ -17,7 +17,7 @@ export default function SeriesByChracter({ characterId, pageIndex }) {
                 {
                     data.data.results.map((serie) => {
                         return (
-                            <div className='p-6 max-w-[200px]'>
+                            <div key={serie.id} className='p-6 max-w-[200px]'>
                                 <div className='truncate'>{serie.title}</div>
                                 <img className="max-w-sm" src={serie.thumbnail.path + "/standard_large." + serie.thumbnail.extension} alt='avatar'></img>
                             </div>
