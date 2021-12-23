@@ -29,7 +29,7 @@ export default function Comic() {
                         {
                             comic.creators.items.map((c) => {
                                 return (
-                                    <div>{c.name}</div>
+                                    <div key={c.name}>{c.name}</div>
                                 )
 
                             })}
