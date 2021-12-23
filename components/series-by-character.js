@@ -9,7 +9,7 @@ export default function SeriesByChracter({ characterId, pageIndex }) {
     const { data, error } = useGet(`/characters/${characterId}/series`, { offset, limit })
     if (error) return <h1>Something went wrong!</h1>
     if (!data) return <h1>Loading...</h1>
-    console.log('series', data)
+    
     return (
         <div className='container'>
             <div className='flex flex-wrap justify-center'>
@@ -19,7 +19,7 @@ export default function SeriesByChracter({ characterId, pageIndex }) {
                 {
                     data.data.results.map((serie) => {
                         return (
-                            <Link href={`/series/${serie.id}`}>
+                            <Link key={serie.id} href={`/series/${serie.id}`}>
                                 <div key={serie.id} className='p-6 max-w-[200px]'>
                                     <div className='truncate'>{serie.title}</div>
                                     <Thumbnail thumbnail={serie.thumbnail} width='standard_large' />

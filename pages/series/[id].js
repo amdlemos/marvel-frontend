@@ -15,7 +15,7 @@ export default function Serie() {
     if (!data) return <h1>Loading...</h1>
 
     const serie = data.data.results[0]
-    console.log('serie',serie)
+    
     return (
         <div className="flex flex-wrap justify-center">
             <div className='p-10'>
